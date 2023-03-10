@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="gris">#B7B6C2</color>
+    <color name="amarillo">#E8AA14</color>
+    <color name="azul_oscuro">#222B3F</color>
+    <color name="black">#131515</color>
+    <color name="white">#EFEFEF</color>
+    <color name="green">#04471C</color>
+    <color name="dark_green">#0D281804471C</color>
+<!--
+    <color name="colorPrimario">#B0B2BF</color>
+    <color name="colorPrimarioOscuro">#4D5061</color>
+    <color name="colorSecundario">#4D5061</color>
+    <color name="colorSecundarioOscuro">#D2D3DA</color>
+    <color name="colorTextoPrimario">#3D3B30</color>
+    <color name="colorTextoSecundario"></color>
+    <color name="colorTextoBlanco">#F2F4F3</color>
+    <color name="colorEnfasis">#E8AA14</color>
+-->
+</resources>
