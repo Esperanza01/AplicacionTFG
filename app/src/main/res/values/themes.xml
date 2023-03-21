@@ -17,7 +17,7 @@
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/gris</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/amarillo</item>
+        <item name="android:statusBarColor">@color/dark_green</item>
         <!-- Customize your theme here. -->
     </style>
 
@@ -28,7 +28,7 @@
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/azul_oscuro</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/amarillo</item>
+        <item name="android:statusBarColor">@color/dark_green</item>
         <!-- Customize your theme here. -->
     </style>
 
