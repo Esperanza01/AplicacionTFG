@@ -12,6 +12,8 @@ public class SplashActivity extends AppCompatActivity {
 
     ProgressBar splashProgress;
 
+
+    //TODO usa una clase deprecated
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
