@@ -40,6 +40,12 @@ public class LoginActivity extends AppCompatActivity {
             con.beginTransaction();
             con.copyToRealmOrUpdate(u);
             con.commitTransaction();
+            try {
+                wait(5000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            con.close();
         }
 
         Button button_login = findViewById(R.id.button_login);
