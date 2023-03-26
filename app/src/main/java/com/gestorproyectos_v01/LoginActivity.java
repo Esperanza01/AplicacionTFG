@@ -33,29 +33,44 @@ public class LoginActivity extends AppCompatActivity {
 
         if(numUsus == 0){
             //admin, admin
-            Usuario u = new Usuario();
-            u.setNombre("admin");
-            u.setPassword("admin");
+            try{
+                Usuario u = new Usuario();
+                u.setId("1");
+                u.setNombre("admin");
+                u.setPassword("admin");
 
-            con.beginTransaction();
-            con.copyToRealmOrUpdate(u);
-            con.commitTransaction();
-            try {
-                wait(5000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                con.beginTransaction();
+                con.copyToRealmOrUpdate(u);
+                con.commitTransaction();
+            }finally {
+                //con.close();
+                //TODO cuándo cerrar la conexión / da igual si se queda abierta?
+
             }
-            con.close();
         }
 
-        Button button_login = findViewById(R.id.button_login);
-        button_login.setOnClickListener(new View.OnClickListener() {
+        Button btn_login = findViewById(R.id.button_login);
+        btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 login();
             }
         });
 
+        Button btn_registrar = findViewById(R.id.button_register);
+        btn_registrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                registrarUsuario();
+            }
+        });
+
+
+    }
+
+    private void registrarUsuario() {
+        Intent i = new Intent(this, UserRegisterActivity.class);
+        startActivity(i);
     }
 
     public void login(){
