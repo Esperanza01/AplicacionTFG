@@ -56,7 +56,7 @@ public class UserRegisterActivity extends AppCompatActivity {
                 con.copyToRealmOrUpdate(u);
                 con.commitTransaction();
             } finally {
-                con.close();
+                //con.close();
                 Toast.makeText(this, "Usuario creado", Toast.LENGTH_LONG).show();
             }
         } else{
