@@ -3,5 +3,11 @@
     <string name="userEditText_name">Usuario</string>
     <string name="passEditText_name">Contraseña</string>
     <string name="passEditText_repeat">Repite la contraseña</string>
+    <!-- Desplegable -->
+    <array name="project_type">
+        <item>Plantilla general</item>
+        <item>Plantilla IoT</item>
+        <item>Plantilla vacía</item>
+    </array>
 
 </resources>

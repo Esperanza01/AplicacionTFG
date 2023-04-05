@@ -2,11 +2,11 @@
     <!-- Base application theme. -->
     <style name="Theme.GestorProyectos_v01" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/dark_green</item>
+        <item name="colorPrimary">@color/green</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/green</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/dark_green</item>
+        <item name="android:statusBarColor">@color/green</item>
         <!-- Customize your theme here. -->
     </style>
 
@@ -15,9 +15,9 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/dark_green</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/green</item>
+        <item name="colorSecondary">@color/white</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/dark_green</item>
+        <item name="android:statusBarColor">@color/green</item>
         <!-- Customize your theme here. -->
     </style>
 

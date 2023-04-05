@@ -1,4 +1,4 @@
-package com.gestorproyectos_v01;
+package com.gestorproyectos_v01.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gestorproyectos_v01.BD.BaseDatos;
+import com.gestorproyectos_v01.R;
 import com.gestorproyectos_v01.modelos.Usuario;
 
 import io.realm.Realm;

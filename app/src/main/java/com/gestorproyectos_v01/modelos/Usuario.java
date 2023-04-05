@@ -7,7 +7,6 @@ public class Usuario extends RealmObject {
 
     @PrimaryKey
     private int id;
-
     private String nombre;
     private String password;
 

@@ -1,4 +1,4 @@
-package com.gestorproyectos_v01;
+package com.gestorproyectos_v01.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,18 +8,18 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ProgressBar;
 
+import com.gestorproyectos_v01.R;
+
 public class SplashActivity extends AppCompatActivity {
 
     ProgressBar splashProgress;
 
-
-    //TODO usa una clase deprecated
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         splashProgress = findViewById(R.id.splashProgress);
-        ObjectAnimator.ofInt(splashProgress, "progress", 100).setDuration(5000).start();
+        ObjectAnimator.ofInt(splashProgress, "progress", 100).setDuration(3000).start();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -27,6 +27,6 @@ public class SplashActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 5000);
+        }, 3000);
     }
 }

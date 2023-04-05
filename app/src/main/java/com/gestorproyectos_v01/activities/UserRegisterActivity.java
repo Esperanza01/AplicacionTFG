@@ -1,4 +1,4 @@
-package com.gestorproyectos_v01;
+package com.gestorproyectos_v01.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.gestorproyectos_v01.BD.BaseDatos;
+import com.gestorproyectos_v01.R;
 import com.gestorproyectos_v01.modelos.Usuario;
 
 import io.realm.Realm;
@@ -58,6 +59,7 @@ public class UserRegisterActivity extends AppCompatActivity {
             } finally {
                 //con.close();
                 Toast.makeText(this, "Usuario creado", Toast.LENGTH_LONG).show();
+                finish();
             }
         } else{
             Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_LONG).show();

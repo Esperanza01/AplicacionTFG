@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="proyecto"
+            type="com.gestorproyectos_v01.modelos.Proyecto" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/lin_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txt_nombre_proy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@{proyecto.nombre_proyecto}"
+            android:layout_marginBottom="5dp"
+            />
+
+        <!-- TODO buscar cómo mostrar vble tipo enum en reciclrerview
+        <TextView
+            android:id="@+id/txt_tipo_proy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13dp"
+            android:textStyle="italic"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@{proyecto.tipo_proyecto.valueOf()}"
+            android:layout_marginBottom="5dp"
+            />-->
+        
+    </LinearLayout>
+    
+</layout>
