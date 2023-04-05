@@ -1,16 +1,24 @@
 package com.gestorproyectos_v01.activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.gestorproyectos_v01.BD.BaseDatos;
 import com.gestorproyectos_v01.R;
 import com.gestorproyectos_v01.adapters.ProjectAdapter;
-import com.gestorproyectos_v01.databinding.ActivityMainMenuBinding;
+import com.gestorproyectos_v01.fragments.FragmentMenuAjustes;
+import com.gestorproyectos_v01.fragments.FragmentMenuCalendario;
+import com.gestorproyectos_v01.fragments.FragmentMenuProyectos;
 import com.gestorproyectos_v01.modelos.Proyecto;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,39 +27,44 @@ import io.realm.Realm;
 
 public class MainMenuActivity extends AppCompatActivity {
 
-    private Realm con;
+    FragmentMenuProyectos fragmentMenuProyectos = new FragmentMenuProyectos();
+    FragmentMenuCalendario fragmentMenuCalendario = new FragmentMenuCalendario();
+    FragmentMenuAjustes fragmentMenuAjustes = new FragmentMenuAjustes();
 
-    private ActivityMainMenuBinding mainMenuBinding;
-    private ProjectAdapter projectAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        con = BaseDatos.getInstance().conectar(getBaseContext());
+        BottomNavigationView navigation = findViewById(R.id.bottom_navigation);
+        navigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-        mainMenuBinding = DataBindingUtil.setContentView(this, R.layout.activity_main_menu);
-        mainMenuBinding.recyclerview.setLayoutManager(new LinearLayoutManager(this));
-        mainMenuBinding.recyclerview.setHasFixedSize(true);
+                switch (item.getItemId()){
+                    case R.id.fragmentProyectos:
+                        loadFragment(fragmentMenuProyectos);
+                        return true;
 
-        projectAdapter = new ProjectAdapter(getProyectos());
-        mainMenuBinding.recyclerview.setAdapter(projectAdapter);
-        mainMenuBinding.executePendingBindings();
+                    case R.id.fragmentCalendario:
+                        loadFragment(fragmentMenuCalendario);
+                        return true;
+
+                    case R.id.fragmentAjustes:
+                        loadFragment(fragmentMenuAjustes);
+                        return true;
+                }
+                return false;
+            }
+        });
 
     }
 
-    private List<Proyecto> getProyectos(){
-
-        List<Proyecto> proyectos = new ArrayList<>();
-        Proyecto proyecto01 = new Proyecto("Test01");
-        Proyecto proyecto02 = new Proyecto("Test02");
-
-        proyectos.add(proyecto01);
-        proyectos.add(proyecto02);
-
-        return proyectos;
+    public void loadFragment(Fragment fragment){
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, fragment);
+        transaction.commit();
     }
-
 
 }
