@@ -12,10 +12,12 @@ import io.realm.annotations.Required;
 public class Proyecto extends RealmObject implements Parcelable {
 
     @PrimaryKey
-    private Integer id;
+    private String id;
 
     @Required
     private String nombre_proyecto;
+
+    private String descripcion_proyecto;
 
     //private String tipo_proy;
     //private boolean pendiente;
@@ -28,16 +30,17 @@ public class Proyecto extends RealmObject implements Parcelable {
 
     }
 
-    public Proyecto(String nombre_proyecto/*, boolean pendiente*/) {
+    public Proyecto(String nombre_proyecto, String desc/*, boolean pendiente*/) {
         this.nombre_proyecto = nombre_proyecto;
+        this.descripcion_proyecto = desc;
         //this.pendiente = pendiente;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -49,6 +52,13 @@ public class Proyecto extends RealmObject implements Parcelable {
         this.nombre_proyecto = nombre_proyecto;
     }
 
+    public String getDescripcion_proyecto() {
+        return descripcion_proyecto;
+    }
+
+    public void setDescripcion_proyecto(String descripcion_proyecto) {
+        this.descripcion_proyecto = descripcion_proyecto;
+    }
 /*
     public boolean isPendiente() {
         return pendiente;
@@ -79,7 +89,7 @@ public class Proyecto extends RealmObject implements Parcelable {
     }
 
     protected Proyecto(Parcel in){
-        this.id = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.id = in.readString();
         this.nombre_proyecto = in.readString();
         //this.pendiente = (boolean) in.readValue(boolean.class.getClassLoader());
     }

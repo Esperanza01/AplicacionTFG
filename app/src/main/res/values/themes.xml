@@ -39,5 +39,11 @@
         <item name="itemTextColor">@color/green</item>
         
     </style>
+
+    <style name="CalendarTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+
+
+
+    </style>
     
 </resources>

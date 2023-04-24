@@ -59,6 +59,8 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
 
+        loadFragment(fragmentMenuProyectos);
+
     }
 
     public void loadFragment(Fragment fragment){

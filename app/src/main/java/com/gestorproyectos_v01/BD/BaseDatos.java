@@ -13,7 +13,7 @@ import io.realm.BuildConfig;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
-public class BaseDatos {
+public class BaseDatos extends Application{
 
     private static BaseDatos instance = new BaseDatos();
     public static BaseDatos getInstance() { return instance;}
@@ -49,6 +49,7 @@ public class BaseDatos {
             RealmConfiguration config = new RealmConfiguration.Builder().name(nombre).build();
             Realm.setDefaultConfiguration(config);
 
+            //Realm backgroundThreadRealm = Realm.getInstance(config);
             con = Realm.getInstance(config);
         }
         return con;

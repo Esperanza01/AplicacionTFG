@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
             //admin, admin
             try{
                 Usuario u = new Usuario();
-                u.setId(1);
+                u.setId("1");
                 u.setNombre("admin");
                 u.setPassword("admin");
 
