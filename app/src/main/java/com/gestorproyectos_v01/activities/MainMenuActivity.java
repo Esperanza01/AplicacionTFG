@@ -2,28 +2,18 @@ package com.gestorproyectos_v01.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.gestorproyectos_v01.BD.BaseDatos;
 import com.gestorproyectos_v01.R;
-import com.gestorproyectos_v01.adapters.ProjectAdapter;
 import com.gestorproyectos_v01.fragments.FragmentMenuAjustes;
 import com.gestorproyectos_v01.fragments.FragmentMenuCalendario;
 import com.gestorproyectos_v01.fragments.FragmentMenuProyectos;
-import com.gestorproyectos_v01.modelos.Proyecto;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import io.realm.Realm;
 
 public class MainMenuActivity extends AppCompatActivity {
 
