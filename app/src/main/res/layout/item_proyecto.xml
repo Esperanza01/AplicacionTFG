@@ -1,44 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
+<layout>
     <data>
         <variable
             name="proyecto"
             type="com.gestorproyectos_v01.modelos.Proyecto" />
     </data>
 
-    <LinearLayout
-        android:id="@+id/lin_layout"
-        android:orientation="vertical"
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        >
 
-        <TextView
-            android:id="@+id/txt_nombre_proy"
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="@{proyecto.nombre_proyecto}"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
             android:layout_marginBottom="5dp"
-            />
+            android:padding="5dp">
 
-        <TextView
-            android:id="@+id/txt_descripcion_proy"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/proy_name_text_view"
-            android:textSize="13dp"
-            android:textStyle="italic"
-            android:gravity="center"
-            android:padding="10dp"
-            android:fontFamily="monospace"
-            android:layout_marginTop="10dp"
-            android:text="@{proyecto.descripcion_proyecto}"
-            android:typeface="monospace" />
+            <TextView
+                android:id="@+id/txt_nombre_proy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="@{proyecto.nombre_proyecto}"
+                android:textStyle="bold"
+                android:typeface="monospace" />
+            <TextView
+                android:id="@+id/txt_descripcion_proy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_nombre_proy"
+                android:fontFamily="monospace"
+                android:layout_marginTop="10dp"
+                android:text="@{proyecto.descripcion_proyecto}"
+                android:typeface="monospace" />
+
 
         <!-- TODO buscar cómo mostrar vble tipo enum en reciclrerview
         <TextView
@@ -51,15 +57,36 @@
             android:padding="10dp"
             android:text="@{proyecto.tipo_proyecto.valueOf()}"
             android:layout_marginBottom="5dp" />-->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_margin="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txt_descripcion_proy"
-            android:background="@color/black" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/txt_descripcion_proy"
+                android:layout_marginTop="15dp"
+                android:background="@color/black" />
+
+
+            <ImageView
+                android:id="@+id/edit_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_descripcion_proy"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="28dp"
+                android:src="@drawable/baseline_delete_outline_24" />
+
+            <ImageView
+                android:id="@+id/delete_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_descripcion_proy"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="28dp"
+                android:src="@drawable/baseline_open_in_new_24" />
         
-    </LinearLayout>
+        </RelativeLayout>
     
+</androidx.cardview.widget.CardView>
 </layout>
